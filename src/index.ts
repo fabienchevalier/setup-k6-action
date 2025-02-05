@@ -1,6 +1,7 @@
 import * as core from '@actions/core';
 import { initialiseBrowser } from './browser';
 import { setupk6 } from './k6';
+import { setupK6Dashboards } from './k6Dashboards';
 
 run()
 
@@ -10,16 +11,22 @@ run()
  */
 export async function run(): Promise<void> {
     try {
-        const k6_version = core.getInput('k6-version', { required: false })
-        const browser = core.getInput('browser') === 'true'
+        const k6_version = core.getInput('k6-version', { required: false });
+        const browser = core.getInput('browser') === 'true';
+        const installDashboards = core.getInput('install-dashboards') === 'true';
 
-        await setupk6(k6_version)
+        await setupk6(k6_version);
+
+        if (installDashboards) {
+            const dashboards_version = core.getInput('k6-dashboards-version', { required: false });
+            await setupK6Dashboards(dashboards_version);
+        }
 
         if (browser) {
-            core.exportVariable('K6_BROWSER_ARGS', 'no-sandbox')
+            core.exportVariable('K6_BROWSER_ARGS', 'no-sandbox');
             await initialiseBrowser();
         }
     } catch (error) {
-        if (error instanceof Error) core.setFailed(error.message)
+        if (error instanceof Error) core.setFailed(error.message);
     }
 }
