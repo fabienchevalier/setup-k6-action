@@ -13,7 +13,7 @@ export async function run(): Promise<void> {
     try {
         const k6_version = core.getInput('k6-version', { required: false });
         const browser = core.getInput('browser') === 'true';
-        const installDashboards = core.getInput('install-dashboards') === 'true';
+        const installDashboards = core.getInput('k6-dashboard') === 'true';
 
         await setupk6(k6_version);
 
