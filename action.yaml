@@ -12,6 +12,12 @@ inputs:
   browser:
     description: 'Installs the browser dependencies for k6'
     required: false
+  k6-dashboard:
+    description: 'Installs the k6 dashboards'
+    required: false
+  k6-dashboards-version:
+    description: 'Version of the k6 dashboards to install'
+    required: false
   github-token:
     description: 'GitHub API Access Token'
     default: ${{ github.token }}
