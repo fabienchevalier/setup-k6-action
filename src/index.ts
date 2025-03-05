@@ -15,7 +15,7 @@ export async function run(): Promise<void> {
         const browser = core.getInput('browser') === 'true';
         const installDashboards = core.getInput('k6-dashboard') === 'true';
 
-        await setupk6(k6_version);
+        await setupK6(k6_version);  // Corrected the function name
 
         if (installDashboards) {
             const dashboards_version = core.getInput('k6-dashboards-version', { required: false });
