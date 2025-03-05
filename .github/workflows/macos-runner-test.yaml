@@ -22,7 +22,7 @@ jobs:
       with:
         k6-version: '0.49.0'
         browser: true
-    - run: k6 run ./dev/browser.js --quiet
+    - run: k6 run ./dev/browser_macos.js --quiet
 
   use-latest-release:
     runs-on: macos-latest

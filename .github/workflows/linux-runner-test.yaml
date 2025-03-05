@@ -22,7 +22,7 @@ jobs:
       with:
         k6-version: '0.57.0'
         browser: true
-    - run: k6 run ./dev/browser.js --quiet
+    - run: k6 run ./dev/browser_linux.js --quiet
 
   use-latest-release:
     runs-on: ubuntu-latest
