@@ -1,7 +1,7 @@
 // k6Dashboards.ts
 import * as core from '@actions/core';
 import { getPlatform } from "./platform";
-import { getLatestVersion, downloadAndExtractBinary, addBinaryInPath } from "./downloadUtils";
+import { getLatestVersion, downloadAndExtractBinary, addBinaryInPath, SUPPORTED_OS_TO_ARCH_MAP } from "./downloadUtils";
 
 const BaseK6DashboardsDownloadURL = 'https://github.com/grafana/xk6-dashboard/releases/download';
 const k6DashboardsRepoOwner = 'grafana';

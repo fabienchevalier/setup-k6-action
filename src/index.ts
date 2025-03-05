@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import { initialiseBrowser } from './browser';
-import { setupk6 } from './k6';
+import { setupK6 } from './k6';
 import { setupK6Dashboards } from './k6Dashboards';
 
 run()

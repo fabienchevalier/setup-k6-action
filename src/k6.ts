@@ -1,7 +1,7 @@
 // Module to setup k6
 import * as core from '@actions/core';
 import { getPlatform } from "./platform";
-import { getLatestVersion, downloadAndExtractBinary, addBinaryInPath } from "./downloadUtils";
+import { getLatestVersion, downloadAndExtractBinary, addBinaryInPath, SUPPORTED_OS_TO_ARCH_MAP } from "./downloadUtils";
 
 const BaseK6DownloadURL = 'https://github.com/grafana/k6/releases/download';
 const k6RepoOwner = 'grafana';

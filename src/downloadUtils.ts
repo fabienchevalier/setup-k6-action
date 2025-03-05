@@ -7,7 +7,7 @@ import chmodr from 'chmodr';
 import { renameSync } from 'fs-extra';
 import { Arch, OS } from "./platform";
 
-const SUPPORTED_OS_TO_ARCH_MAP: { [key in OS]: Arch[] } = {
+export const SUPPORTED_OS_TO_ARCH_MAP: { [key in OS]: Arch[] } = {
     [OS.LINUX]: [Arch.AMD64, Arch.ARM64],
     [OS.DARWIN]: [Arch.AMD64, Arch.ARM64],
     [OS.WINDOWS]: [Arch.AMD64]
